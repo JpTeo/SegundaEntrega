@@ -1,29 +1,178 @@
 .container {
-  background-color: rgb(199, 188, 176);
+  background-color: rgb(211, 208, 208);
   display: grid;
   justify-content: center;
   align-items: center;
-  padding: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr)); 
+  gap: 3rem;
 }
+
 
 .card {
-  display: grid;
-  justify-content: space-around;
-  padding: 5rem;
-  height: 10rem;
-  width: 10rem;
-  border: solid 1px black;
-  border-radius: 0.5rem;
-  margin-bottom: 2rem;
+  padding: 5%;
+  margin: 10%
+
+}
+body{
+  margin: 0;
 }
 
+main {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background: #f9f9f9;
+}
 
-.card:hover {
+.panel {
+  background-size: auto 110%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 30px;
+  color: #d5d5d5;
   cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+  -webkit-transition: all 700ms ease-in;
 }
 
-.card img {
-  width: 10rem;  
-  height: 100%; 
-  object-fit: cover; 
+.panel h3 {
+  font-size: 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
 }
+
+.panel h1 {
+  font-size: 50px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3 ease-in 0.4s;
+}
+
+.container2 {
+  display: flex;
+  width: 90vw;
+}
+
+@media (max-width: 480px) {
+  .container2 {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4) .panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
+.categoria img {
+  transition-property: transform;
+  transition-duration: 300ms;
+  border-radius: 30px;
+}
+
+.categoria img:hover {
+  transform: scale(1.2);
+}
+
+.hero {
+  background-image: url(../img/tienda1.jpg);
+  width: 1450px;
+height: 590px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 40px;
+  margin-left: 2.5%;
+
+
+}
+
+h1 {
+    font-size: 40px;
+    padding: 0.5%;
+    padding-left: 5%;
+}
+
+h2 {
+    font-size: 50px;
+    padding: 2%;
+    padding-left: 5%;
+}
+
+.modal-overlay {
+  display: none;
+  background-color: rgba(0, 0 , 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.modal-container {
+  display: none;
+  background-color: #ffff;
+  box-shadow: 0px 3px 6px #00000029;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: 100%;
+  z-index: 1;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-body{
+  margin-bottom:  20px;
+  text-align: center;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.product-img {
+  height: 80px;
+  margin-right: 20px;
+  width: 80px;
+}
+
+.product-into {
+  flex: 1;
+  text-align: left;
+}
+
+
+.finalizar {
+   position: relative;
+      margin-top: 2%;
+        left: 47%;
+       
+} 
